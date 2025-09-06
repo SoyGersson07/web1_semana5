@@ -1,0 +1,107 @@
+/*BEM
+
+BLOCK__ELEMENT--MODIFIER
+*/
+
+/*que es BEM? 
+BEM es una metodologia para nombrar clases en CSS y asi evitar conflictos de nombres y mejorar la mantenibilidad del codigo.
+BEM significa Bloque, Elemento, Modificador (Block, Element, Modifier).
+Un bloque es un componente independiente que puede reutilizarse. Ejemplo: .button, .header, .menu
+Un elemento es una parte de un bloque que no tiene sentido por si solo. Se nombra con dos guiones bajos. Ejemplo: .button__icon, .menu__item
+Un modificador es una variacion de un bloque o elemento. Se nombra con dos guiones. Ejemplo: .button--primary, .menu__item--active
+
+¿como se define? 
+bloque: es un contenedor principal que encapsula un componente o una funcionalidad completa.
+elemento: es una parte del bloque que depende de él y no tiene sentido por sí solo.
+modificador: es una variación del bloque o elemento que cambia su apariencia o comportamiento. 
+Ejemplo:
+.boton { }
+.boton__icono { } /* Elemento
+.boton__icono--highlihgt { } /* Modificador
+
+Beneficios:
+1. Evita conflictos de nombres: Al usar una convención clara y consistente, se reducen las posibilidades de que dos clases tengan el mismo nombre y causen problemas.
+2. Mejora la mantenibilidad: La estructura clara de BEM facilita la comprensión del código y su mantenimiento a largo plazo.
+3. Facilita la colaboración: Al seguir una convención común, los equipos de desarrollo pueden trabajar juntos de manera más eficiente.  
+4. Promueve la reutilización: Los bloques y elementos pueden reutilizarse en diferentes partes del proyecto sin preocuparse por conflictos de estilos. 
+5. Mejora la escalabilidad: La estructura modular de BEM facilita la adición de nuevas funcionalidades sin afectar el código existente.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, 
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body.site {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/*Bloque layout*/
+.layout {
+    display: grid;
+    grid-template-rows: 10vh 1fr 10vh;
+    height: 100vh;
+}
+.layout__header {
+    background-color: rgb(132, 32, 32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+}
+.layout__title {
+    margin: 0;
+    font-size: bold;
+    color: white;
+}
+.layout__footer {
+    background-color:rgb(132, 32, 32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.layout__footer-text {
+    margin: 0;
+    font-weight: bold;
+}
+
+.layout__main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    min-height: 0;
+}
+
+/*Bloque nav*/
+.nav {
+    background-color: rgb(228, 221, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+}
+.nav__link {
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    background-color: rgb(138, 103, 103);
+    border-radius: 4px;
+}
+
+/*bloque content*/
+.content {
+    background-color: rgb(208, 202, 213);
+    padding: 16px;
+    overflow: auto;
+}
